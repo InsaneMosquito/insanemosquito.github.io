@@ -117,11 +117,12 @@ function initialize() {
     map.addListener('zoom_changed', update_url);
 
 	function addMarker(place) {
+		// From http://stackoverflow.com/a/15562698/189134
 		var marker = new google.maps.Marker({
 			position: new google.maps.LatLng(place.lat,place.lng),
 			map: map,
 			title: place.title,
-			icon: iconHTML(icons[place.icon].icon)
+			icon: icons[place.icon].icon
 		});
 
 		google.maps.event.addListener(marker, 'click', (function(marker, i) {
@@ -135,30 +136,6 @@ function initialize() {
 	alert(interestingPoints.length)
 	for (i = 0; i < interestingPoints.length; i++) {
 		addMarker(interestingPoints[i])
-	}
-  
-  //addoutline();
-}
-
-function addmarkers(){
-	// From http://stackoverflow.com/a/15562698/189134
-	var infowindow = new google.maps.InfoWindow;
-	var marker, i;
-	alert(interestingPoints.length)
-	for (i = 0; i < interestingPoints.length; i++) {
-		var marker = new google.maps.Marker({
-			position: new google.maps.LatLng(interestingPoints[i].lat,interestingPoints[i].lng),
-			map: map,
-			title: interestingPoints[i].title,
-			icon: iconHTML(icons[interestingPoints[i].icon].icon)
-		});
-
-		google.maps.event.addListener(marker, 'click', (function(marker, i) {
-			return function() {
-				infowindow.setContent(interestingPoints[i].info);
-				infowindow.open(map, marker);			
-			}		
-		})(marker, i));
 	}
 }
 
