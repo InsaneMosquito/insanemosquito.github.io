@@ -109,6 +109,7 @@ function initialize() {
     map = new google.maps.Map(document.getElementById("map_canvas"),mapOptions);
     map.mapTypes.set('custom',CustomMapType);
     map.setMapTypeId('custom');
+	addmarkers();
 
     hash_changed()
 
@@ -116,7 +117,7 @@ function initialize() {
     map.addListener('zoom_changed', update_url);
 
 
-  addmarkers();
+  
   //addoutline();
 }
 
