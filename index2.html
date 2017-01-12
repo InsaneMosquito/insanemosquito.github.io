@@ -7,13 +7,40 @@
     body { height: 100%; margin: 0px; padding: 0px }
     #map_canvas { height: 100%; z-index: 0;}
     #gmnoprint {width: auto;}
+	
+	green_icon { color: green; }
+	red_icon { color: red; }
+	blue_icon { color: blue; }
 </style>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-<title>Factorio Maps</title>
+<title>Mosquito's Base</title>
 <!-- For local use, don't change anything. For server (making it available on a website) use, get a Google Maps API key (get one here: https://developers.google.com/maps/documentation/javascript/get-api-key), paste your key in the line below this one where it says "INSERTAPIKEY", uncomment the line below and two lines down delete the second <!-- and the first --> 
  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyyTYUIQomBjmtJmrnfJ2FlLhlJx2x-KU"></script>
  <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> -->
 <script>
+
+icons = {
+	green: {
+		icon: '<i class="material-icons green-icon">place</i>'
+	},
+	red: {
+		icon: '<i class="material-icons red-icon">place</i>'
+	},
+	blue: {
+		icon: '<i class="material-icons blue-icon">place</i>'
+	}
+
+
+}
+
+interestingPoints = [
+	{lat: 61, lng: 29, title: 'Steam Engine Cluster', info: 'Each cluster of 10 engines was added as power needs grew.', icon: 'blue'},
+	{lat: 66, lng: 41.39, title: 'Steel Smelting', info: 'These rows of steel plate and steel bar smelters were the first smelters built. They completely drained the iron ore just to the left.', icon: 'red'},
+]
+	
+
+
 function CustomMapType() {}
 
 CustomMapType.prototype.tileSize = new google.maps.Size(512,512);
@@ -84,25 +111,29 @@ function initialize() {
     map.addListener('zoom_changed', update_url);
 
 
-  addmarker();
+  addmarkers();
   //addoutline();
 }
 
-function addmarker(){
-    var infowindow = new google.maps.InfoWindow({
-		content: 'Steam Engine Cluster'
-	});
-	
-	var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(61,29),
-        map: map,
-        title:"Steam Engine Cluster"
-    });
-	marker.addListener('click', function() {
-		infowindow.open(map, marker);
-	});
-	
-	marker.setMap(map);
+function addmarkers(){
+
+	for (let place of interestingPoints) {
+		var infowindow = new google.maps.InfoWindow({
+			content: place.info
+		});
+		
+		var marker = new google.maps.Marker({
+			position: new google.maps.LatLng(place.lat,place.lng),
+			map: map,
+			title: place.title,
+			icon: icons[place.icon].icon
+		});
+		marker.addListener('click', function() {
+			infowindow.open(map, marker);
+		});
+		
+		marker.setMap(map);
+	}
 }
 
 function addoutline()
