@@ -79,7 +79,7 @@ interestingPoints = [
 	{lat: 80.8763, lng: -24.8291, title: 'Oilfield', info: 'The first oilfield. This provided sulfer, plastic and fuel blocks (to replace coal), but it is running low. There is oil to both the east and west of the factories here.', icon: 'oilfield'},
 	{lat: 80.0978, lng: -26.7736, title: 'Train Stop - Oilfield', info: 'Northern oil field train loading - loads three materials (fuel, sulfer, plastic)', icon: 'train'},
 	{lat: 78.1818, lng: -50.1196, title: 'Third Iron Mine', info: 'My third iron extension. It is just firing up.', icon: 'mine'},
-	{lat: 77.2811, lng: -51.0534, title: 'Train Stop - Iron Load', info: 'Another stop on the iron train.', icon: 'mine'},
+	{lat: 77.2811, lng: -51.0534, title: 'Train Stop - Iron Load', info: 'Another stop on the iron train.', icon: 'train'},
 	{lat: 82.5548, lng: -50.0976, title: 'First Alien Attack', info: 'My first attack on an alien. It was time to get higher technology. The poles are placed after destroying a spawner so it the aliens do not return.', icon: 'ufo'},
 	{lat: 82.3206, lng: -91.2084, title: 'Aliens!', info: 'A small alien base (notice there are some to the north east and more in the trees to the south west)', icon: 'ufo'},
 	{lat: 61.1856, lng: -67.8955, title: 'Trees', info: 'Lines in the trees like this are from me driving through in a tank. When I am out of range of my roboports, I need to do this instead of having bots clear a block of trees.', icon: 'info'},
@@ -182,7 +182,6 @@ function initialize() {
 		})(marker, i));
 	}
 
-	alert(interestingPoints.length)
 	for (i = 0; i < interestingPoints.length; i++) {
 		addMarker(interestingPoints[i])
 	}
