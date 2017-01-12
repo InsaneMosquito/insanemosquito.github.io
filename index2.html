@@ -124,6 +124,7 @@ function iconHTML(s) {
 function addmarkers(){
 
 	for (let place of interestingPoints) {
+		alert(place.info)
 		var infowindow = new google.maps.InfoWindow({
 			content: place.info
 		});
