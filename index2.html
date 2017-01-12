@@ -85,18 +85,12 @@ function initialize() {
 
 
   addmarker();
-  addoutline();
+  //addoutline();
 }
 
 function addmarker(){
     var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(85,-180),
-        map: map,
-    // optimized: false,
-        title:"Hello World!"
-    });
-    var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(-85,-180),
+        position: new google.maps.LatLng(0,0),
         map: map,
     // optimized: false,
         title:"Hello World!"
