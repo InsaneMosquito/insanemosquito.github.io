@@ -122,25 +122,23 @@ function iconHTML(s) {
 }
 
 function addmarkers(){
-
-	for (let place of interestingPoints) {
-		alert(place.info)
-		var infowindow = new google.maps.InfoWindow({
-			content: place.info
-		});
-		
+	var infowindow = new google.maps.InfoWindow;
+	var marker, i;
+	
+	for (i = 0; i < interestingPoints.length; i++) {
 		var marker = new google.maps.Marker({
-			position: new google.maps.LatLng(place.lat,place.lng),
+			position: new google.maps.LatLng(interestingPoints[i].lat,interestingPoints[i].lng),
 			map: map,
-			title: place.title,
-			icon: iconHTML(icons[place.icon].icon)
+			title: interestingPoints[i].title,
+			icon: iconHTML(icons[interestingPoints[i].icon].icon)
 		});
-		marker.addListener('click', function() {
-			infowindow.open(map, marker);
-		});
-		
-		marker.setMap(map);
-	}
+
+		google.maps.event.addListener(marker, 'click', (function(marker, i) {
+			return function() {
+				infowindow.setContent(interestingPoints[i].info);
+				infowindow.open(map, marker);			
+			}		
+		})(marker, i));
 }
 
 function addoutline()
