@@ -109,28 +109,42 @@ function initialize() {
     map = new google.maps.Map(document.getElementById("map_canvas"),mapOptions);
     map.mapTypes.set('custom',CustomMapType);
     map.setMapTypeId('custom');
-	addmarkers();
+//	addmarkers();
 
     hash_changed()
 
     map.addListener('center_changed', update_url);
     map.addListener('zoom_changed', update_url);
 
+	function addMarker(place) {
+		var marker = new google.maps.Marker({
+			position: new google.maps.LatLng(place.lat,place.lng),
+			map: map,
+			title: place.title,
+			icon: iconHTML(icons[place.icon].icon)
+		});
 
+		google.maps.event.addListener(marker, 'click', (function(marker, i) {
+			return function() {
+				infowindow.setContent(place.info);
+				infowindow.open(map, marker);			
+			}		
+		})(marker, i));
+	}
+
+	alert(interestingPoints.length)
+	for (i = 0; i < interestingPoints.length; i++) {
+		addMarker(interestingPoints[i])
+	}
   
   //addoutline();
 }
 
-function iconHTML(s) {
-	var d = document.createElement('div');
-	d.innerHTML = s;
-	return d.firstChild;
-}
-
 function addmarkers(){
+	// From http://stackoverflow.com/a/15562698/189134
 	var infowindow = new google.maps.InfoWindow;
 	var marker, i;
-	
+	alert(interestingPoints.length)
 	for (i = 0; i < interestingPoints.length; i++) {
 		var marker = new google.maps.Marker({
 			position: new google.maps.LatLng(interestingPoints[i].lat,interestingPoints[i].lng),
