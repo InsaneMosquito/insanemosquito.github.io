@@ -16,8 +16,8 @@
 <script>
 function CustomMapType() {}
 
-CustomMapType.prototype.tileSize = new google.maps.Size(1024,1024);
-CustomMapType.prototype.minZoom = 3;
+CustomMapType.prototype.tileSize = new google.maps.Size(512,512);
+CustomMapType.prototype.minZoom = 2;
 CustomMapType.prototype.maxZoom = 7;
 CustomMapType.prototype.getTile = function(coord, zoom, ownerDocument) {
     var div = ownerDocument.createElement('DIV');
@@ -62,8 +62,8 @@ if ("onhashchange" in window) {
 
 function initialize() {
     var mapOptions = {
-        zoom: 3,
-        // minZoom: 3,
+        zoom: 2,
+        // minZoom: 2,
         // maxZoom: 7,
         isPng: false,
         mapTypeControl: false,
