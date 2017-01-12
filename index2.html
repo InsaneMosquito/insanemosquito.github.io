@@ -22,13 +22,13 @@
 
 icons = {
 	green: {
-		icon: '<i class="material-icons">place</i>'
+		icon: "<i class='material-icons green_icon'>place</i>"
 	},
 	red: {
-		icon: '<i class="material-icons">place</i>'
+		icon: "<i class='material-icons red_icon'>place</i>"
 	},
 	blue: {
-		icon: '<i class="material-icons">place</i>'
+		icon: "<i class='material-icons blue_icon'>place</i>"
 	}
 
 
@@ -115,6 +115,12 @@ function initialize() {
   //addoutline();
 }
 
+function iconHTML(s) {
+	var d = document.createElement('div');
+	d.innerHTML = s;
+	return d.firstChild;
+}
+
 function addmarkers(){
 
 	for (let place of interestingPoints) {
@@ -126,7 +132,7 @@ function addmarkers(){
 			position: new google.maps.LatLng(place.lat,place.lng),
 			map: map,
 			title: place.title,
-			icon: icons[place.icon].icon
+			icon: iconHTML(icons[place.icon].icon)
 		});
 		marker.addListener('click', function() {
 			infowindow.open(map, marker);
