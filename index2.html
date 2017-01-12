@@ -94,7 +94,7 @@ function addmarker(){
 	});
 	
 	var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(0,0),
+        position: new google.maps.LatLng(61,29),
         map: map,
         title:"Steam Engine Cluster"
     });
@@ -102,7 +102,7 @@ function addmarker(){
 		infowindow.open(map, marker);
 	});
 	
-	//marker.setMap(map);
+	marker.setMap(map);
 }
 
 function addoutline()
