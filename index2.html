@@ -9,6 +9,7 @@
 	#map_canvas { height: 100%; z-index: 0;}
     #gmnoprint {width: auto;}
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 <title>Mosquito's Base</title>
 <!-- For local use, don't change anything. For server (making it available on a website) use, get a Google Maps API key (get one here: https://developers.google.com/maps/documentation/javascript/get-api-key), paste your key in the line below this one where it says "INSERTAPIKEY", uncomment the line below and two lines down delete the second <!-- and the first --> 
@@ -125,7 +126,7 @@ function initialize() {
 		var lng = png.lng();
 		lat = lat.toFixed(4);
 		lng = lng.toFixed(4);
-		document.getElementById("coordinates").innerHTML = lat + ", " + lng;
+		$("#coordinates").HTML(lat + ", " + lng);
 	}
 
 	function addMarker(place) {
