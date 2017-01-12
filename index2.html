@@ -89,14 +89,20 @@ function initialize() {
 }
 
 function addmarker(){
-    var marker = new google.maps.Marker({
+    var infowindow = new google.maps.InfoWindow({
+		content: 'Steam Engine Cluster';
+	});
+	
+	var marker = new google.maps.Marker({
         position: new google.maps.LatLng(0,0),
         map: map,
-    // optimized: false,
-        label:"Hello World!"
+        title:"Steam Engine Cluster"
     });
+	marker.addListener('click', function() {
+		infowindow.open(map, marker);
+	});
 	
-	marker.setMap(map);
+	//marker.setMap(map);
 }
 
 function addoutline()
