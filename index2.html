@@ -118,7 +118,7 @@ function initialize() {
     map.addListener('center_changed', update_url);
     map.addListener('zoom_changed', update_url);
 	google.maps.event.addListener(map, 'mousemove', function(event) {
-		$("#coordinates").HTML(event.latLng.lat() + ", " + event.latLng.lng());	
+		$("#coordinates").html(event.latLng.lat() + ", " + event.latLng.lng());	
 	});
 
 	function addMarker(place) {
