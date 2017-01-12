@@ -36,14 +36,57 @@ icons = {
 	},
 	train: {
 		icon: iconBase + "train.png"
-	}
+	},
+	radar: {
+		icon: iconBase + "radar.png"
+	},
+	car: {
+		icon: iconBase + "jeep.png"
+	},
+	ufo: {
+		icon: iconBase + "ufo.png"
+	},
+	info: {
+		icon: iconBase + "symbol_excla.png"
+	},
 
 
 }
 
 interestingPoints = [
 	{lat: 61, lng: 29, title: 'Steam Engine Cluster', info: 'Each cluster of 10 engines was added as power needs grew.', icon: 'power'},
-	{lat: 66, lng: 41.39, title: 'Steel Smelting', info: 'These rows of steel plate and steel bar smelters were the first smelters built. They completely drained the iron ore just to the left.', icon: 'factory'},
+	{lat: 66.6616, lng: 41.27, title: 'Steel Smelting', info: 'These rows of steel plate and steel bar smelters were the first smelters built. They completely drained the iron ore just to the left.', icon: 'factory'},
+	{lat: 64.7975, lng: 39.46, title: 'Copper Smelting', info: 'Copper Smelting. It has grown (to the east) since I started needing circuits for everything. The copper field to the west was the initial copper. That field is almost empty.', icon: 'factory'},
+	{lat: 63.87, lng: 39.46, title: 'Stone Bricks', info: 'This is my only stone brick factory. It is still running in the first level smelters because the bricks are used so infrequently.', icon: 'factory'},
+	{lat: 61.4545, lng: 39.1, title: 'Stone Mine', info: 'The only original mine that is still in operation.', icon: 'mine'},
+	{lat: 54.1560, lng: 51.5884, title: 'First Iron Expansion', info: 'My first base expansion was to get more iron. As you can see by the drills over empty land, I am already depleating this.', icon: 'mine'},
+	{lat: 53.0874, lng: 56.6125, title: 'Train Stop - Iron Load', info: 'The iron train stops here to load iron', icon: 'train'},
+	{lat: 67.5337, lng: 40.4931, title: 'Train Stop - Iron Unload', info: 'The iron train stops here to unload iron to the eastern iron smelters', icon: 'train'},
+	{lat: 63.9373, lng: 53.6462, title: 'Train Stop - Copper Unload', info: 'The copper train stops here to unload copper to the eastern copper smelters', icon: 'train'},
+	{lat: 68.3708, lng: 42.0117, title: 'Train Stop - Iron Unload', info: 'The iron train stops here to unload iron to the western iron smelters', icon: 'train'},
+	{lat: 74.6367, lng: 11.0961, title: 'Train Stop - Copper Load', info: 'Train stop to load copper for transport back to base', icon: 'train'},
+	{lat: 77.1791, lng: 8.5253, title: 'Copper Mine', info: 'My first big copper expansion. As you can see it is still pretty busy, but there are a few patches that are mined clean. This expansion took place after I had bots so that I could use them to clear the trees that were on top of this ore.', icon: 'mine'},
+	{lat: 74.5286, lng: 8.3056, title: 'Train Stop - Iron Load', info: 'Second Iron stop.', icon: 'train'},
+	{lat: 73.8186, lng: 3.5266, title: 'Second Iron Mine', info: 'My second iron extension. It is nearly empty.', icon: 'mine'},
+	{lat: 64.468, lng: 6.6357, title: 'Tank and Car', info: 'This is my car and tank. Useful when you need to go long distances or assault a (small) base.', icon: 'car'},
+	{lat: 64.7741, lng: 13.8208, title: 'Train Stop - Northern Oil field Unload', info: 'Train stop that brings in fuel, sulfer and plastic from the northern oil field.', icon: 'train'},
+	{lat: 65.6718, lng: 25.5534, title: 'Main Transport Bus', info: 'This is the main transport bus for all materials. It carries smelted materials from the east to the west. Lines are (mostly) load balanced and split off to fuel the factories.', icon: 'info'},
+	{lat: 67.9993, lng: 27.7514, title: 'Research Plaza', info: 'This research plaza and supporting factories are what get me new technologies. Research progresses from Red->Green->Blue->Purple. Each higher level requires all previous levels too.', icon: 'info'},
+	{lat: 71.3219, lng: 20.1928, title: 'First Solar Farm', info: 'The first solar farm.', icon: 'solar'},
+	{lat: 64.1297, lng: -17.0288, title: 'Second Solar Farm', info: 'The second solar farm.', icon: 'solar'},
+	{lat: 60.3812, lng: -8.7231, title: 'Robotics Factory', info: 'Everything in this area - iron, copper, engines, and circuits - is used to fill this single building with robots so they can join the logistics network.', icon: 'info'},
+	{lat: 28.4590, lng: -33.2885, title: 'Oilfield', info: 'The second oil field. I expanded to this area as I prepared the robotics factory to the north and as I was running low on plastic from the northern oil field.', icon: 'oilfield'},
+	{lat: 80.8763, lng: -24.8291, title: 'Oilfield', info: 'The first oilfield. This provided sulfer, plastic and fuel blocks (to replace coal), but it is running low. There is oil to both the east and west of the factories here.', icon: 'oilfield'},
+	{lat: 80.0978, lng: -26.7736, title: 'Train Stop - Oilfield', info: 'Northern oil field train loading - loads three materials (fuel, sulfer, plastic)', icon: 'train'},
+	{lat: 78.1818, lng: -50.1196, title: 'Third Iron Mine', info: 'My third iron extension. It is just firing up.', icon: 'mine'},
+	{lat: 77.2811, lng: -51.0534, title: 'Train Stop - Iron Load', info: 'Another stop on the iron train.', icon: 'mine'},
+	{lat: 82.5548, lng: -50.0976, title: 'First Alien Attack', info: 'My first attack on an alien. It was time to get higher technology. The poles are placed after destroying a spawner so it the aliens do not return.', icon: 'ufo'},
+	{lat: 82.3206, lng: -91.2084, title: 'Aliens!', info: 'A small alien base (notice there are some to the north east and more in the trees to the south west)', icon: 'ufo'},
+	{lat: 61.1856, lng: -67.8955, title: 'Trees', info: 'Lines in the trees like this are from me driving through in a tank. When I am out of range of my roboports, I need to do this instead of having bots clear a block of trees.', icon: 'info'},
+	
+	
+	
+	
 ]
 	
 
@@ -118,7 +161,7 @@ function initialize() {
     map.addListener('center_changed', update_url);
     map.addListener('zoom_changed', update_url);
 	google.maps.event.addListener(map, 'mousemove', function(event) {
-		$("#coordinates").html(event.latLng.lat() + ", " + event.latLng.lng());	
+		$("#coordinates").html(event.latLng.lat().toFixed(4) + ", " + event.latLng.lng().toFixed(4));	
 	});
 
 	function addMarker(place) {
