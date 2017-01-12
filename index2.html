@@ -90,7 +90,7 @@ function initialize() {
 
 function addmarker(){
     var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(0,0),
+        position: {lat: 0, lng: 0},
         map: map,
     // optimized: false,
         title:"Hello World!"
