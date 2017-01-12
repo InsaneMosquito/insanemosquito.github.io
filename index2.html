@@ -50,7 +50,6 @@ icons = {
 		icon: iconBase + "symbol_excla.png"
 	},
 
-
 }
 
 interestingPoints = [
@@ -83,10 +82,37 @@ interestingPoints = [
 	{lat: 82.5548, lng: -50.0976, title: 'First Alien Attack', info: 'My first attack on an alien. It was time to get higher technology. The poles are placed after destroying a spawner so it the aliens do not return.', icon: 'ufo'},
 	{lat: 82.3206, lng: -91.2084, title: 'Aliens!', info: 'A small alien base (notice there are some to the north east and more in the trees to the south west)', icon: 'ufo'},
 	{lat: 61.1856, lng: -67.8955, title: 'Trees', info: 'Lines in the trees like this are from me driving through in a tank. When I am out of range of my roboports, I need to do this instead of having bots clear a block of trees.', icon: 'info'},
-	
-	
-	
-	
+]
+
+trainRoutes = [
+	{ color: '#FF0000', route: [	// Iron Train
+							{lat: 53.0874, lng: 56.6125 },
+							{lat: 56.281517, lng: 56.7773 },
+							{lat: 57.3384, lng: 57.8870 },
+							{lat: 61.6116, lng: 50.2295 },
+							{lat: 67.8300, lng: 50.1196 },
+							{lat: 68.4517, lng: 48.4387 },
+							{lat: 68.4436, lng: 46.2854 },
+							{lat: 69.1704, lng: 43.9783 },
+							{lat: 69.1704, lng: 35.9783 },
+							{lat: 69.8320, lng: 33.9587 },
+							{lat: 71.0669, lng: 339258 },
+							{lat: 73.4754, lng: 26.0706 },
+							{lat: 73.4472, lng: 13.8867 },
+							{lat: 72.5413, lng: 9.9097 },
+							{lat: 73.0514, lng: 7.8882 },
+							{lat: 74.5959, lng: 7.9102 },
+							{lat: 75.0758, lng: 6.4050 },
+							{lat: 75.0758, lng: -1.6370 },
+							{lat: 77.6201, lng: -12.7112 },
+							{lat: 77.6201, lng: -31.5747 },
+							{lat: 77.2714, lng: -34.0466 },
+							{lat: 78.1818, lng: -50.1196 },
+							
+						],
+	},
+
+
 ]
 	
 
@@ -181,9 +207,24 @@ function initialize() {
 			}		
 		})(marker, i));
 	}
+	
+	function addRoute(route) {
+		var flightPath = new google.maps.Polyline({
+			path: route.route,
+			geodesic: true,
+			strokeColor: route.color,
+			strokeOpacity: 1.0,
+			strokeWeight: 2
+        });
+        flightPath.setMap(map);
+	}
 
 	for (i = 0; i < interestingPoints.length; i++) {
 		addMarker(interestingPoints[i])
+	}
+	
+	for (i = 0; i < trainRoutes.length; i++) {
+		addRoute(trainRoutes[i])
 	}
 }
 
