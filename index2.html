@@ -90,11 +90,13 @@ function initialize() {
 
 function addmarker(){
     var marker = new google.maps.Marker({
-        position: {lat: 0, lng: 0},
+        position: new google.maps.LatLng(0,0),
         map: map,
     // optimized: false,
         title:"Hello World!"
     });
+	
+	marker.setMap(map);
 }
 
 function addoutline()
