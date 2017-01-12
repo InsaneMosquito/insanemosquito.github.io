@@ -117,17 +117,9 @@ function initialize() {
 
     map.addListener('center_changed', update_url);
     map.addListener('zoom_changed', update_url);
-//	google.maps.event.addListener(map, 'mousemove', function(event) {
-//		displayCoordinates(event.latLng);	
-//	});
-	
-	function displayCoordinates(pnt) {
-		var lat = pnt.lat();
-		var lng = png.lng();
-		lat = lat.toFixed(4);
-		lng = lng.toFixed(4);
-		$("#coordinates").HTML(lat + ", " + lng);
-	}
+	google.maps.event.addListener(map, 'mousemove', function(event) {
+		$("#coordinates").HTML(event.latLng.lat() + ", " + event.latLng.lng());	
+	});
 
 	function addMarker(place) {
 		// From http://stackoverflow.com/a/15562698/189134
