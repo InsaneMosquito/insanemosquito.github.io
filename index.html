@@ -16,7 +16,7 @@
  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyyTYUIQomBjmtJmrnfJ2FlLhlJx2x-KU"></script>
  <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> -->
 <script>
-
+/*
 var iconBase = "map_icons/"
 icons = {
 	factory: {
@@ -140,7 +140,7 @@ trainRoutes = [
 						],
 	},
 ]
-	
+	*/
 
 
 function CustomMapType() {}
@@ -216,7 +216,7 @@ function initialize() {
 		$("#coordinates").html(event.latLng.lat().toFixed(4) + ", " + event.latLng.lng().toFixed(4));	
 	});
 
-	function addMarker(place) {
+/*	function addMarker(place) {
 		// From http://stackoverflow.com/a/15562698/189134
 		var infowindow = new google.maps.InfoWindow;
 		var marker = new google.maps.Marker({
@@ -244,14 +244,15 @@ function initialize() {
         });
         flightPath.setMap(map);
 	}
-
-	for (i = 0; i < interestingPoints.length; i++) {
+*/
+/*	for (i = 0; i < interestingPoints.length; i++) {
 		addMarker(interestingPoints[i])
 	}
 	
 	for (i = 0; i < trainRoutes.length; i++) {
 		addRoute(trainRoutes[i])
 	}
+*/
 }
 
 function addoutline()
